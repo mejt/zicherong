@@ -1,0 +1,25 @@
+{
+  "name": "zicherong",
+  "version": "0.0.1",
+  "description": "Zicherong is an circuit breaker mechanism for node.js applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "tsc": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.12",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "lolex": "^4.2.0",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.4"
+  }
+}
