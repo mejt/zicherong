@@ -6,7 +6,7 @@ defaults: &defaults
   - image: circleci/node:10.16
 
 jobs:
- test:
+ build:
   <<: *defaults
   steps:
    - checkout
@@ -21,12 +21,22 @@ jobs:
    - run:
       name: Run tests
       command: npm test
+   - run:
+      name: Build Typescript
+      command: npm run tsc
 
    - save_cache:
       paths:
        - node_modules
+       - build
       key: v1-dependencies-{{ checksum "package.json" }}
 
    - persist_to_workspace:
       root: ~/repo
       paths: .
+
+workflows:
+ version: 2
+ npm-deploy:
+  jobs:
+   - build
