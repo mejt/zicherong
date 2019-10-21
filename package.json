@@ -1,6 +1,6 @@
 {
   "name": "zicherong",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Zicherong is an circuit breaker mechanism for node.js applications",
   "main": "index.js",
   "scripts": {
