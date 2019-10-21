@@ -34,7 +34,7 @@ jobs:
    - persist_to_workspace:
       root: ~/repo
       paths: .
- deploy:
+ publish-package:
   <<: *defaults
   steps:
    - attach_workspace:
@@ -53,12 +53,12 @@ workflows:
    - build:
       filters:
        tags:
-        only: /^v.*/
-   - deploy:
+        only: /.*/
+   - publish-package:
       requires:
        - build
       filters:
+       tags:
+        only: /.*/
        branches:
         ignore: /.*/
-       tags:
-        only: /^v.*/
