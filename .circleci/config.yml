@@ -50,10 +50,15 @@ workflows:
  version: 2
  npm-deploy:
   jobs:
-   - build
+   - build:
+      filters:
+       tags:
+        only: /^v.*/
    - deploy:
       requires:
        - build
       filters:
        branches:
         ignore: /.*/
+       tags:
+        only: /^v.*/
