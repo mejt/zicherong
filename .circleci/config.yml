@@ -3,7 +3,7 @@ version: 2
 defaults: &defaults
  working_directory: ~/repo
  docker:
-  - image: circleci/node:10.16
+  - image: circleci/node:12.18
 
 jobs:
  build:
@@ -17,10 +17,10 @@ jobs:
        # fallback to using the latest cache if no exact match is found
        - v1-dependencies-
 
-   - run: npm install
-#   - run:
-#      name: Run tests
-#      command: npm test
+   - run: npm ci
+   - run:
+      name: Run tests
+      command: npm test
    - run:
       name: Build Typescript
       command: npm run tsc

@@ -1,5 +1,13 @@
 module.exports = {
-    preset: 'ts-jest',
-    testEnvironment: 'node',
-    modulePathIgnorePatterns: ["<rootDir>/dist/"]
+    "roots": [
+        "<rootDir>/lib"
+    ],
+    "transform": {
+        "^.+\\.ts?$": "ts-jest"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+        "lib/**/*.ts",
+        "!**/*.test.ts"
+    ]
 };
