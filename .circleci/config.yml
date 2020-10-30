@@ -18,9 +18,9 @@ jobs:
        - v1-dependencies-
 
    - run: npm install
-   - run:
-      name: Run tests
-      command: npm test
+#   - run:
+#      name: Run tests
+#      command: npm test
    - run:
       name: Build Typescript
       command: npm run tsc
